@@ -1,12 +1,8 @@
 
 let express = require("express");
 let http = require("http");
-
 let { Server } = require("socket.io");
-const { isErrored } = require("stream");
-
 let port = process.env.port || 5000;
-
 let router = express.Router();
 
 router.get("/", (req, res) => {
