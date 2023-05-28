@@ -22,7 +22,7 @@ function ChatContainer() {
     if (message) {
       socket.emit("passMessage", { message, room, username, avatar });
       setMessage("");
-      console.log(message, passedMessage);
+      
     }
   }
   useEffect(() => {
@@ -37,9 +37,6 @@ function ChatContainer() {
   useEffect(() => {
     socket.on("message", (message) => {
       setPassedMessage((prev) => [...prev, message])
-      // setUsername(message.from)
-      // setRoom(message.room)
-      // setAvatar(message.avatar)
       
     });
     console.log(passedMessage);
