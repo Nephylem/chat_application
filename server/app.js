@@ -1,13 +1,12 @@
-
 let express = require("express");
 let http = require("http");
 let { Server } = require("socket.io");
 let port = process.env.port || 5000;
-let router = express.Router();
+// let router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send({ response: "Server is running..." }).status(200);
-});
+// router.get("/", (req, res) => {
+//   res.send({ response: "Server is running..." }).status(200);
+// });
 
 let app = express();
 let server = http.createServer(app);
@@ -17,7 +16,7 @@ let io = new Server(server, {
   },
 });
 
-app.use(router);
+// app.use(router);
 
 users = [];
 io.on("connection", (socket) => {
@@ -57,6 +56,7 @@ io.on("connection", (socket) => {
       from: username,
       avatar: avatar,
     });
+    
   });
   socket.on("userLeft", ({ username, room }) => {
     username = username.trim().toLowerCase();

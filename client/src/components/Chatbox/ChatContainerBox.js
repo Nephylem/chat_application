@@ -11,7 +11,7 @@ function ChatContainer() {
   socket = io("localhost:5000");
 
   const [message, setMessage] = useState("");
-  const [messageHistory, setMessageHistory] = useState([]);
+  const [passedMessage, setPassedMessage] = useState([]);
 
   const [username, setUsername] = useState(localStorage.getItem("username"));
   const [room, setRoom] = useState(localStorage.getItem("room"));
@@ -22,6 +22,7 @@ function ChatContainer() {
     if (message) {
       socket.emit("passMessage", { message, room, username, avatar });
       setMessage("");
+      console.log(message, passedMessage);
     }
   }
   useEffect(() => {
@@ -34,15 +35,20 @@ function ChatContainer() {
   }, [username, avatar, room]);
 
   useEffect(() => {
-    socket.on("message", (msg) => {
-      setMessageHistory((prev) => [...prev, msg]);
+    socket.on("message", (message) => {
+      setPassedMessage((prev) => [...prev, message])
+      // setUsername(message.from)
+      // setRoom(message.room)
+      // setAvatar(message.avatar)
+      
     });
-  }, []);
+    console.log(passedMessage);
+  });
   return (
     <div className="chat-container">
       <div className="chat-header">
-        Chat Room: {room} <br/>
-        Username: {username} <br/>
+        Chat Room: {room} <br />
+        Username: {username} <br />
         <div className="account-head">
           <button
             onClick={(e) => {
@@ -59,8 +65,8 @@ function ChatContainer() {
         </div>
       </div>
       <ScrollToBottom className="chat-box">
-        {messageHistory.map((data, i) =>
-          data.from === username.trim().toLowerCase() ? (
+        {passedMessage.map((data, i) =>
+          data.from.trim().toLowerCase() === username.trim().toLowerCase() ? (
             <ChatSender
               key={i}
               name={data.from}
