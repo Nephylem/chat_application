@@ -50,6 +50,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("passMessage", ({ message, room, username, avatar }) => {
+    room = room.trim().toLowerCase()
     io.to(room).emit("message", {
       text: message,
       room: room,
@@ -60,6 +61,7 @@ io.on("connection", (socket) => {
   });
   socket.on("userLeft", ({ username, room }) => {
     username = username.trim().toLowerCase();
+    room = room.trim().toLowerCase();
     users = users.filter((user) => user.username !== username);
 
     socket.broadcast.to(room).emit("message", {
