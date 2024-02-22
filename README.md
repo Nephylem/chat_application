@@ -17,7 +17,7 @@ Usage : <br>
 
 
 
-
-https://github.com/Nephylem/chat_application/assets/101467434/a31843ce-9eb6-4357-a2fb-22fb8a06fef8
+### Demo Video
+<video src="https://github.com/Nephylem/chat_application/assets/101467434/a31843ce-9eb6-4357-a2fb-22fb8a06fef8" width="500" height="880" autoplay="true" loop="true"><video/>
 
 
