@@ -20,7 +20,7 @@ let io = new Server(server, {
 
 users = [];
 io.on("connection", (socket) => {
-  console.log("New client connected");
+  
 
   socket.on("join", ({ username, room, avatar }, callback) => {
     let error = false;

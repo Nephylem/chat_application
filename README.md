@@ -12,8 +12,8 @@ Usage : <br>
 >>-run npm start both server and client folders <br> 
 >>-input name <br> 
 >>-input room name <br> 
->>-input url image for the avatar.  <br> 
->>-try opening the https://localhost:3000 in couple browsers and try sending chat messages <br> 
+>>-input url image for the avatar - use picsum.photos  <br> 
+>>-open https://localhost:3000 in two different browsers and send chat messages <br> 
 
 
 

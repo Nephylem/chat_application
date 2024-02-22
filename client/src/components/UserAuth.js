@@ -38,15 +38,15 @@ let styles = {
 export default function UserAuth() {
   let [name, setName] = useState();
   let [room, setRoom] = useState();
+  let [avatar, setAvatar] = useState("https://picsum.photos/200/300");
 
-  let [avatar, setAvatar] = useState();
   function signIn() {
     if (!name) {
       alert("Please input your name");
     } else if (!room) {
       alert("Please input your Room");
     } else if (!avatar) {
-      alert("Please enter your avatar. You can also get from picsum.com");
+      alert("Please enter your avatar. You can also get from picsum.photos");
     } else {
       localStorage.setItem("username", name);
       localStorage.setItem("room", room);
@@ -75,14 +75,14 @@ export default function UserAuth() {
         placeholder="Room"
       />
 
-      <input
+      {/* <input
         onChange={(e) => {
           setAvatar(e.target.value);
         }}
         style={styles.input}
         type="text"
         placeholder="Enter desired avatar image URL"
-      />
+      /> */}
 
       <button onClick={signIn} style={styles.button}>
         Login

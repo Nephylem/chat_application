@@ -14,8 +14,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<UserAuth />} />
-        <Route path="chat_application" element={<UserAuth />} />
-        <Route path="chatbox" element={<ChatContainer />} />
+        <Route path="*" element={<UserAuth />} />
+        <Route path="/chatbox" element={<ChatContainer />} />
       </Routes>
     </Router>
   );
