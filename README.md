@@ -13,8 +13,11 @@ Usage : <br>
 >>-input name <br> 
 >>-input room name <br> 
 >>-input url image for the avatar - use picsum.photos  <br> 
->>-open https://localhost:3000 in two different browsers and send chat messages <br> 
+>>-open https://localhost:3000 in two different browsers and send chat messages <br>
 
 
+
+
+https://github.com/Nephylem/chat_application/assets/101467434/a31843ce-9eb6-4357-a2fb-22fb8a06fef8
 
 
